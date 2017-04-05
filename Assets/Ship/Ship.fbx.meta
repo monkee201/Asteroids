@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 3bef30196a7231e4d88e4b75747f4d99
-timeCreated: 1490351753
-licenseType: Pro
+guid: de1e61938b1a8144a93dd79f08c05e3c
+timeCreated: 1491394845
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Ship
+    4300000: Ship1
   materials:
     importMaterials: 1
     materialName: 0
@@ -17,7 +17,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
