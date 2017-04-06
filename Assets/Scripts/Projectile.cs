@@ -20,8 +20,7 @@ public class Projectile : MonoBehaviour
 	{
         
 	        _myTransform.Translate(Vector3.forward * speed * Time.deltaTime);
-
-        if(_myTransform.position.z > 60)
-            Destroy(gameObject);
+	   
+            Destroy(gameObject,5);
 	}
 }

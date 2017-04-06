@@ -25,6 +25,7 @@ public class script_Ship_Movement : MonoBehaviour
         // Lateral movement
         _myTransform.Translate(Vector3.right * sideSpeed *Input.GetAxis("Horizontal")* Time.deltaTime);
 
+        if(Input.GetAxis("Vertical") >0)
         _myTransform.Translate(Vector3.forward * forwardSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
 
         Vector3 position = new Vector3(_myTransform.position.x, _myTransform.position.y - 0.4f , _myTransform.position.z + 1.5f);
