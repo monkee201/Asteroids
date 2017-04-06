@@ -27,10 +27,11 @@ public class Health : MonoBehaviour {
 
 
 
-    //[SerializeField]
-    private float f_Health;
-    //[SerializeField]
+
+    [SerializeField]
     private float f_max_Health = 100;
+    [SerializeField]
+    private float f_Health = 100;
     //[SerializeField]
     private float f_min_Health = 0;
 
