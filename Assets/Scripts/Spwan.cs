@@ -17,7 +17,7 @@ public class Spwan : MonoBehaviour
     void Update()
     {
 
-        Vector3 pos = new Vector3(Random.Range(-60,60),Random.Range(-1,1),Random.Range(80,150));
+        Vector3 pos = new Vector3(Random.Range(-60,60),Random.Range(-60,60),Random.Range(60,-60));
 
         if (GlobalValuesScript.MaxNumberOfAsteroids > GlobalValuesScript.NumberOfAsteroids)
         {
