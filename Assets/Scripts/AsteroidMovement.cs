@@ -36,6 +36,7 @@ public class AsteroidMovement : MonoBehaviour
         {
             Destroy(gameObject);
             GlobalValuesScript.NumberOfAsteroids--;
+            GlobalValuesScript.Score += 10;
         }
     }
 }
