@@ -35,7 +35,22 @@ public class script_Ship_Movement : MonoBehaviour
 	    {
 	        Instantiate(projectile,position,Quaternion.identity);
 	    }
-
+            CheckBounds();
         }
-    
+    private void CheckBounds()
+    {
+        if (_myTransform.position.x < 100 && _myTransform.position.x > -100
+            && _myTransform.position.y < 100 && _myTransform.position.y > -100
+            && _myTransform.position.z < 100 && _myTransform.position.z > -100)
+        {
+            GlobalValuesScript.InBounds = true;
+         
+        }
+        else
+            GlobalValuesScript.InBounds = false;
+        
+
+    }
+
 }
+

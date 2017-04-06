@@ -8,5 +8,7 @@ public class GlobalValuesScript : MonoBehaviour
 
     public static int Score = 0;
 
+    public static bool InBounds = true;
+
 }
 
