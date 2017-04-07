@@ -30,8 +30,10 @@ public class script_Ship_Movement : MonoBehaviour {
     {
         f_roll = Input.GetAxis("Horizontal");
         f_pitch = Input.GetAxis("Vertical");
-        rb_Ship.transform.Rotate(Vector3.forward * f_pitch);
-        rb_Ship.transform.Rotate(Vector3.right * f_roll);
+        //rb_Ship.transform.Rotate(Vector3.forward * f_pitch);
+        //rb_Ship.transform.Rotate(Vector3.right * f_roll);
+        rb_Ship.AddTorque(rb_Ship.transform.forward * f_pitch * 5);
+        rb_Ship.AddTorque(rb_Ship.transform.right * f_roll * 5);
     }
     void Thrust()
     {
