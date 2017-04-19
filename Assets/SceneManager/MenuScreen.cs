@@ -29,7 +29,7 @@ public class MenuScreen : MonoBehaviour {
 
 	public void Exit()
 	{
-		Application.Quit();
 		Debug.Log("Aplication Quit");
+		Application.Quit ();
 	}
 }
