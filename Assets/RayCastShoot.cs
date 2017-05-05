@@ -8,7 +8,7 @@ public class RayCastShoot : MonoBehaviour {
     public float f_weapon_Range = 50f;
     public float f_hit_Force = 500f;
     public Transform tf_gun_End;
-
+    [SerializeField]
     private Camera c_ship_Camera;
     private WaitForSeconds wfs_shot_Duration = new WaitForSeconds(0.07f);
     private LineRenderer lr_laser_Line;
@@ -16,7 +16,6 @@ public class RayCastShoot : MonoBehaviour {
 
 	void Start () {
         lr_laser_Line = GetComponent<LineRenderer>();
-        c_ship_Camera = GetComponentInParent<Camera>();
 	}
 	
 	void Update () {
