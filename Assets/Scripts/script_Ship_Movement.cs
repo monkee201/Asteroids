@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class script_Ship_Movement : MonoBehaviour {
 
     
     private Rigidbody rb_Ship;
     [SerializeField]
+    private Text txt_Speed;
+    [SerializeField]
     private float f_thrust;
+    [SerializeField]
     private float f_power = 0;
     private float f_roll = 0;
     private float f_pitch = 0;
+    private float f_speed;
 
     // Use this for initialization
     void Start () {
@@ -22,7 +27,8 @@ public class script_Ship_Movement : MonoBehaviour {
 
         Thrust();
         rotation();
-
+        f_speed = rb_Ship.velocity.magnitude;
+        txt_Speed.text = f_speed.ToString("0.00") +" m/s";
     }
     
     void rotation()
