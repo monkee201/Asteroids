@@ -13,15 +13,20 @@ public class RayCastShoot : MonoBehaviour {
     private WaitForSeconds wfs_shot_Duration = new WaitForSeconds(0.07f);
     private LineRenderer lr_laser_Line;
     private float f_next_Fire;
+	public AudioClip Laser;
+	AudioSource audio;
 
 	void Start () {
         lr_laser_Line = GetComponent<LineRenderer>();
+		audio = GetComponent<AudioSource> ();
 	}
 	
 	void Update () {
 		if(Input.GetButton ("Fire2") && Time.time > f_next_Fire)
         {
             f_next_Fire = Time.time + f_fire_Rate;
+
+			audio.PlayOneShot (Laser, 0.7f);
 
             StartCoroutine(ShotEffect());
             Vector3 tmp_v3_ray_Origin = c_ship_Camera.ViewportToWorldPoint(new Vector3 (0.5f , 0.5f, 0f));

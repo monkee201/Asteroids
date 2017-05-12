@@ -9,6 +9,9 @@ public class PauseGame : MonoBehaviour {
 	public Transform VideoMenu;
 	public Transform ControlsMenu;
 
+	void Start(){
+
+	}
 
 	void Update () {
 	
