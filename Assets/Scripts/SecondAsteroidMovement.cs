@@ -30,31 +30,31 @@ public class SecondAsteroidMovement : MonoBehaviour {
 
         transform.Translate(speed * Time.deltaTime);
 
-        if (_myTransform.position.z > 100)
+        if (_myTransform.position.z > GlobalValuesScript.PlayArea)
         {
-            _myTransform.position = new Vector3(_myTransform.position.x, _myTransform.position.y, -100);
+            _myTransform.position = new Vector3(_myTransform.position.x, _myTransform.position.y, -GlobalValuesScript.PlayArea);
         }
-        else if (_myTransform.position.z < -100)
+        else if (_myTransform.position.z < -GlobalValuesScript.PlayArea)
         {
-            _myTransform.position = new Vector3(_myTransform.position.x, _myTransform.position.y, 100);
-        }
-
-        if (_myTransform.position.y > 100)
-        {
-            _myTransform.position = new Vector3(_myTransform.position.x, -100, _myTransform.position.z);
-        }
-        else if (_myTransform.position.y < -100)
-        {
-            _myTransform.position = new Vector3(_myTransform.position.x, 100, _myTransform.position.z);
+            _myTransform.position = new Vector3(_myTransform.position.x, _myTransform.position.y, GlobalValuesScript.PlayArea);
         }
 
-        if (_myTransform.position.x > 100)
+        if (_myTransform.position.y > GlobalValuesScript.PlayArea)
         {
-            _myTransform.position = new Vector3(-100, _myTransform.position.y, _myTransform.position.z);
+            _myTransform.position = new Vector3(_myTransform.position.x, -GlobalValuesScript.PlayArea, _myTransform.position.z);
         }
-        else if (_myTransform.position.x < -100)
+        else if (_myTransform.position.y < -GlobalValuesScript.PlayArea)
         {
-            _myTransform.position = new Vector3(100, _myTransform.position.y, _myTransform.position.z);
+            _myTransform.position = new Vector3(_myTransform.position.x, GlobalValuesScript.PlayArea, _myTransform.position.z);
+        }
+
+        if (_myTransform.position.x > GlobalValuesScript.PlayArea)
+        {
+            _myTransform.position = new Vector3(-GlobalValuesScript.PlayArea, _myTransform.position.y, _myTransform.position.z);
+        }
+        else if (_myTransform.position.x < -GlobalValuesScript.PlayArea)
+        {
+            _myTransform.position = new Vector3(GlobalValuesScript.PlayArea, _myTransform.position.y, _myTransform.position.z);
         }
 
     }

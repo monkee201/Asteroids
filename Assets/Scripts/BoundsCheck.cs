@@ -18,9 +18,9 @@ public class BoundsCheck : MonoBehaviour {
 
     private void CheckBounds()
     {
-        if (_myTransform.position.x < 200 && _myTransform.position.x > -200
-            && _myTransform.position.y < 200 && _myTransform.position.y > -200
-            && _myTransform.position.z < 200 && _myTransform.position.z > -200)
+        if (_myTransform.position.x < GlobalValuesScript.PlayArea && _myTransform.position.x > -GlobalValuesScript.PlayArea
+            && _myTransform.position.y < GlobalValuesScript.PlayArea && _myTransform.position.y > -GlobalValuesScript.PlayArea
+            && _myTransform.position.z < GlobalValuesScript.PlayArea && _myTransform.position.z > -GlobalValuesScript.PlayArea)
         {
             GlobalValuesScript.InBounds = true;
 
