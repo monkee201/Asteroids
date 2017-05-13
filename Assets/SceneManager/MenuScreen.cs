@@ -7,6 +7,7 @@ public class MenuScreen : MonoBehaviour {
 	string AboutScene = "AboutScene";
 	string HighscoreScene = "HighscoreScene";
 	string GameScene = "GameScene";
+	string CreditsScene = "CreditsScene";
 
 
 	public void StartGame()
@@ -19,6 +20,12 @@ public class MenuScreen : MonoBehaviour {
 	{
 		SceneManager.LoadScene(AboutScene);
 		Debug.Log ("About scene Loaded");
+	}
+
+	public void Credits()
+	{
+		SceneManager.LoadScene(CreditsScene);
+		Debug.Log ("Credit scene Loaded");
 	}
 
 	public void Highscore()
