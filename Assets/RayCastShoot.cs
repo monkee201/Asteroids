@@ -9,6 +9,8 @@ public class RayCastShoot : MonoBehaviour {
     public float f_hit_Force = 500f;
     public Transform tf_gun_End;
     [SerializeField]
+    private GameObject go_Explosion;
+    [SerializeField]
     private Camera c_ship_Camera;
     private WaitForSeconds wfs_shot_Duration = new WaitForSeconds(0.07f);
     private LineRenderer lr_laser_Line;
@@ -38,6 +40,7 @@ public class RayCastShoot : MonoBehaviour {
             {
                 lr_laser_Line.SetPosition(1, tmp_rh_hit.point);
                 AsteroidMovement scpt_AM = tmp_rh_hit.collider.GetComponent<AsteroidMovement>();
+                Instantiate(go_Explosion, tmp_rh_hit.point, Quaternion.identity);
                 if (scpt_AM != null)
                 {
                     scpt_AM.Die();
