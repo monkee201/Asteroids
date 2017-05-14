@@ -6,6 +6,7 @@ public class GlobalValuesScript : MonoBehaviour
     public static int MaxNumberOfAsteroids = 200;
     public static int NumberOfAsteroids;
     public static int PlayArea = 500; // radius not diameter
+    public static bool GameIsPLaying; 
 
     public static int Score = 0;
 

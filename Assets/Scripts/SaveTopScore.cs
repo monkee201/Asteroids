@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class SaveTopScore : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+   public void StoreHighscore(int newHighscore)
+    {
+        int oldHighscore = PlayerPrefs.GetInt("highscore", 0);
+        if (newHighscore > oldHighscore)
+            PlayerPrefs.SetInt("highscore", newHighscore);
+    }
+
+    public int GetTopScore()
+    {
+        return PlayerPrefs.GetInt("highscore");
+    }
 }

@@ -39,6 +39,7 @@ public class script_Ship_Movement : MonoBehaviour {
         rb_Ship.AddTorque(rb_Ship.transform.forward * f_pitch * 5);
         rb_Ship.AddTorque(rb_Ship.transform.right * f_roll * 5);
     }
+
     void Thrust()
     {
         if (Input.GetButton("Fire1"))
