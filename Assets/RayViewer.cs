@@ -16,7 +16,9 @@ public class RayViewer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 lineOrigin = fpscamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
-        
-	}
+        if (fpscamera != null)
+        {
+            Vector3 lineOrigin = fpscamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
+        }
+    }
 }

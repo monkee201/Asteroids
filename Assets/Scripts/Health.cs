@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour {
 
 
-    public GameObject ship;
+
     public GameObject GameOverCanvas;
     public Text TopScore;
     private SaveTopScore script;
@@ -16,11 +16,31 @@ public class Health : MonoBehaviour {
     private float f_Health = 100;
     //[SerializeField]
     private float f_min_Health = 0;
+    private bool b_coliding;
 
     private void Start()
     {
         GlobalValuesScript.GameIsPLaying = true;
-        script=new SaveTopScore();
+        f_Health = 100f;
+        b_coliding = false;
+        script = new SaveTopScore();
+
+    }
+
+    void OnTriggerEnter (Collider col)
+    {
+        if (col.gameObject.CompareTag("Asteroid") && !b_coliding)
+        {
+           Damage(10f);
+            b_coliding = true;
+            Destroy(col.gameObject);
+
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        b_coliding = false;
     }
 
     //Update
@@ -31,9 +51,8 @@ public class Health : MonoBehaviour {
 
     private void Die()
     {
-        if (f_Health < f_min_Health)
+        if (f_Health <= f_min_Health)
         {
-            Destroy(ship);
             GameOverCanvas.SetActive(true);
             script.StoreHighscore(GlobalValuesScript.Score);
             TopScore.text = script.GetTopScore().ToString();
@@ -58,6 +77,7 @@ public class Health : MonoBehaviour {
     public void Damage(float input_f_damage_Amount)
     {
         f_Health -= input_f_damage_Amount;
+        Debug.Log(f_Health);
     }
 
     //Increases health by input amount

@@ -59,7 +59,7 @@ public class AsteroidMovement : MonoBehaviour
 
     }
 
-    public void OnTriggerEnter(Collider collider)
+   /* public void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.CompareTag("Projectile"))
         {
@@ -70,8 +70,9 @@ public class AsteroidMovement : MonoBehaviour
             GlobalValuesScript.NumberOfAsteroids++;
            
         }
-    }
+    }*/
 
+   
     public void Die()
     {
         GlobalValuesScript.Score += 10;
