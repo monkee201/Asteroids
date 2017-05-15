@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
+
 public class Health : MonoBehaviour {
 
 
@@ -16,23 +17,23 @@ public class Health : MonoBehaviour {
     private float f_Health = 100;
     //[SerializeField]
     private float f_min_Health = 0;
-    private bool b_coliding;
+    private bool b_colliding;
 
     private void Start()
     {
         GlobalValuesScript.GameIsPLaying = true;
         f_Health = 100f;
-        b_coliding = false;
+        b_colliding = false;
         script = new SaveTopScore();
 
     }
 
     void OnTriggerEnter (Collider col)
     {
-        if (col.gameObject.CompareTag("Asteroid") && !b_coliding)
+        if (col.gameObject.CompareTag("Asteroid") && !b_colliding)
         {
-           Damage(10f);
-            b_coliding = true;
+            Damage(Mathf.Round(Random.Range(10, 30)));
+            b_colliding = true;
             Destroy(col.gameObject);
 
         }
@@ -40,7 +41,7 @@ public class Health : MonoBehaviour {
 
     void OnTriggerExit(Collider col)
     {
-        b_coliding = false;
+        b_colliding = false;
     }
 
     //Update
